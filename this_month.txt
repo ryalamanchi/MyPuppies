@@ -1,0 +1,3 @@
+# Logfile created on 2015-03-15 00:25:18 +0000 by logger.rb/31641
+D, [2015-03-15T00:25:18.277788 #88594] DEBUG -- : log file created
+I, [2015-03-15T00:25:18.277835 #88594]  INFO -- : Starting the test...
