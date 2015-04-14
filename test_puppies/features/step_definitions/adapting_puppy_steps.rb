@@ -63,26 +63,24 @@ end
 When(/^I select the second View Details button$/) do
   if @browser.button(:index, 1).exist?
     @browser.button(:index, 1).click
-pw
   end
 end
 
 When(/^I should see first ([^\"]*) and ([^\"]*) for line item (\d+)$/) do |firstname, firstamount, line_item|
 
   puts "before table"
-  puts @cart.row_for(line_item.to_i)
-  puts @cart.cart_element[cart.row_for(line_item.to_i)][1].text
-  row = row_for(line_item.to_i)
-  #puts row
-  #puts @browser.table(:index => 0)[row][2].text
+  # puts @cart.row_for(line_item.to_i)
+  # puts @cart.cart_element[cart.row_for(line_item.to_i)][1].text
+  # row = row_for(line_item.to_i)
   #@browser.table(:index => 0)[row][1].text.should include firstname
 
-  #@cart.cart[@cart.row_for(line_item.to_i)][1].should include firstname
-  @cart.cart[0][1].should include firstname
+  @cart.cart_element[@cart.row_for(line_item.to_i)][1].text.should include firstname
+  # @cart.cart[0][1].should include firstname
   puts "after table"
 
+  @cart.cart_element[@cart.row_for(line_item.to_i)][1].text.should include firstname
   # @cart = ShoppingCartPage.new(@browser)
-  @cart.name_for_line_item(line_item.to_i).should include firstname
+  # @cart.name_for_line_item(line_item.to_i).should include firstname
   @cart.subtotal_for_line_item(line_item.to_i).should include firstamount
   row = row_for(line_item.to_i)
   # puts @browser.table(:index => 0)[row][1].text
@@ -108,7 +106,7 @@ When(/^I should see ([^\"]*) as the cart total$/) do |total|
 end
 
 
-def row_for(line_item)
-  (line_item - 1) * 6
-end
+# def row_for(line_item)
+#   (line_item - 1) * 6
+# end
 
