@@ -2,11 +2,8 @@ require 'rspec'
 require 'page-object'
 require 'logger'
 require 'soap-object'
-# require 'HTTParty'
-# require 'pretty_face'
+require 'HTTParty'
 #require 'rspec-expectations'
-
-# Cucumber::Ast::Scenario = Cucumber::Reports::Legacy::Ast::Scenario
 
 World(PageObject::PageFactory)
 World(SoapObject::Factory)
@@ -15,5 +12,4 @@ World(SoapObject::Factory)
 # log.debug "log file created"
 # log.info 'Starting the test...'
 
-puts "Starting the test...."
-
+puts "Starting the test.....inside webservice"

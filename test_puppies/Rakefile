@@ -7,3 +7,8 @@ Cucumber::Rake::Task.new(:features) do |t|
 end
 
 task :default => :features
+
+# directory "temp"
+# file "hello.temp" => "temp" do
+#   sh "echo 'Hello' >> 'tmp/hello.tmp'"
+# end

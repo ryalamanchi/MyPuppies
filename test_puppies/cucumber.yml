@@ -1,1 +1,4 @@
-default: --no-source --color --format pretty
+#default: --no-source --color --format PrettyFace::Formatter::Html --out results/index.html --tags @test
+default: --no-source --color --format pretty --out results/index.html --tags @test --verbose
+#default: --format PrettyFace::Formatter::Html --out results/index.html --tags @test
+# --formatPrettyFace::Formatter::Html--outresults/index.html

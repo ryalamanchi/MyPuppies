@@ -7,7 +7,7 @@ end
 
 When /^I click the View Details button$/ do
 
-  @browser.button(:value, 'View Details').click
+  @browser.button(:value, 'View Details').when_present.click
 end
 
 And /^I click the Adopt Me button$/ do
@@ -28,7 +28,7 @@ And /^I enter "([^\"]*)" "([^\"]*)" "([^\"]*)" and "([^\"]*)"$/ do |name, addres
   # @browser.text_field(:id, "order_name").set name
   # @browser.text_field(:id, "order_address").set address
   # @browser.text_field(:id, "order_email").set email
-  # @browser.select_list(:id, "order_pay_type").select paytype
+  # @browser.select_list(:id, "order_pay_type").select cdi
   @cko = CheckoutPage.new(@browser)
 
   # puts "field #{@cko.name}" if @cko.name?

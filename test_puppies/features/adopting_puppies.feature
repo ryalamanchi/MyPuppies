@@ -27,7 +27,7 @@ Examples:
     And I click the Complete the Adoption button
     And I enter "<Name>" "<address>" "<email>" and "<paytype>"
     And I click the Place Order button
-    Then I should see "Thank you for adopting a puppy!"
+    Then I should see "Thank you for adopting a puppy!!!"
 
   Examples:
     | Name| address|email| paytype| firstpuppyname | firstprice| secondpuppyname | secondprice| totalprice |

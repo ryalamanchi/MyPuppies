@@ -1,0 +1,36 @@
+Using the default profile...
+Feature: Adopting puppies
+
+  Background: 
+    [32mGiven I am on the puppy adoption site[0m
+      [36mInside[0m
+    [32mWhen I click the View Details button[0m
+
+  [36m@test[0m
+  Scenario Outline: Adopting two puppy
+    [36mAnd I click the Adopt Me button[0m
+    [36mAnd I click the Adopt Another Puppy button[0m
+    [36mAnd I select the second View Details button[0m
+    [36mAnd I click the Adopt Me button[0m
+    [36mAnd I should see first <firstpuppyname> and <firstprice> for line item 1[0m
+    [36mAnd I should see second <secondpuppyname> and <secondprice> for line item 2[0m
+    [36mAnd I should see <totalprice> as the cart total[0m
+    [36mAnd I click the Complete the Adoption button[0m
+    [36mAnd I enter "<Name>" "<address>" "<email>" and "<paytype>"[0m
+    [36mAnd I click the Place Order button[0m
+    [36mThen I should see "Thank you for adopting a puppy!!!"[0m
+
+    Examples: 
+      | [36m[1mName  [0m[0m[36m[0m |[0m [36m[1maddress    [0m[0m[36m[0m |[0m [36m[1memail             [0m[0m[36m[0m |[0m [36m[1mpaytype    [0m[0m[36m[0m |[0m [36m[1mfirstpuppyname[0m[0m[36m[0m |[0m [36m[1mfirstprice[0m[0m[36m[0m |[0m [36m[1msecondpuppyname[0m[0m[36m[0m |[0m [36m[1msecondprice[0m[0m[36m[0m |[0m [36m[1mtotalprice[0m[0m[36m[0m |[0m
+      | [31mCheezy[0m[0m |[0m [31m123 Main St[0m[0m |[0m [31mcheezy@example.com[0m[0m |[0m [31mCredit card[0m[0m |[0m [31mBrook         [0m[0m |[0m [31m$34.95    [0m[0m |[0m [31mHanna          [0m[0m |[0m [31m$22.99     [0m[0m |[0m [31m$57.94    [0m[0m |[0m  [36mbefore table, after table[0m
+[31m      undefined method `row_for' for #<Object:0x007fdfa495ba10> (NoMethodError)[0m
+[31m      ./features/step_definitions/adapting_puppy_steps.rb:85:in `/^I should see first ([^\"]*) and ([^\"]*) for line item (\d+)$/'[0m
+[31m      features/adopting_puppies.feature:34:in `And I should see first Brook and $34.95 for line item 1'[0m
+[31m      features/adopting_puppies.feature:24:in `And I should see first <firstpuppyname> and <firstprice> for line item 1'[0m
+
+[31mFailing Scenarios:[0m
+[31mcucumber features/adopting_puppies.feature:34[0m
+
+1 scenario ([31m1 failed[0m)
+13 steps ([31m1 failed[0m, [36m6 skipped[0m, [32m6 passed[0m)
+0m10.581s
